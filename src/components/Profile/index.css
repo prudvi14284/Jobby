@@ -1,0 +1,52 @@
+.profile-card {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  justify-content: center;
+  height: 200px;
+  width: 90%;
+  background-size: cover;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.profile-pic {
+  height: 60px;
+  width: 60px;
+  text-align: left;
+}
+.Profile-name {
+  color: #6366f1;
+  font-size: 19px;
+  padding-top: 10px;
+}
+
+.Profile-role {
+  color: #272727;
+  font-size: 15px;
+  margin: 0px;
+}
+
+.error-profile {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .profile-card {
+    background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
