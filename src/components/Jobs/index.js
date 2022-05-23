@@ -196,7 +196,7 @@ class Jobs extends Component {
         className="noJobsImg"
         alt="no jobs"
       />
-      <h1 className="noJobsHead">No Jobs Found</h1>
+      <h1 className="NoJobsHead">No Jobs Found</h1>
       <p className="noJobsPara">
         We could not find any jobs. Try other filters
       </p>
