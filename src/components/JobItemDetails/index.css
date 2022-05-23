@@ -1,4 +1,4 @@
-.job-details-bg {
+.jobDetailsBg {
   background-color: #121212;
   min-height: 100vh;
   display: flex;
@@ -8,7 +8,7 @@
   padding: 20px;
 }
 
-.loading-bg {
+.loadingBg {
   display: flex;
   background-color: #121212;
   height: 100vh;
@@ -17,7 +17,7 @@
   align-items: center;
 }
 
-.card-container {
+.cardContainer11 {
   background-color: #272727;
   border-radius: 20px;
   display: flex;
@@ -27,31 +27,31 @@
   font-family: 'Roboto';
   margin: 5px;
 }
-.card-top {
+.cardTop11 {
   display: flex;
   align-items: center;
 }
-.company-logo {
+.companyLogo11 {
   height: 70px;
   width: 70px;
   margin-right: 10px;
 }
-.role1 {
+.role11 {
   font-size: 18px;
   margin-bottom: 6px;
   margin-top: 9px;
 }
 
-.role2 {
+.role12 {
   font-size: 18px;
   margin-bottom: 6px;
   margin-top: 20px;
 }
-.rating1 {
+.rating11 {
   display: flex;
   align-items: center;
 }
-.star-size {
+.starSize11 {
   height: 20px;
   width: 20px;
   color: #fbbf24;
@@ -59,7 +59,7 @@
   border-style: none;
   margin-right: 5px;
 }
-.card-middle {
+.cardMiddle11 {
   display: flex;
   margin-top: 15px;
   align-items: center;
@@ -71,37 +71,37 @@
   margin-right: 8px;
   margin-top: 0px;
 }
-.location1 {
+.location11 {
   font-size: 16px;
   margin-right: 15px;
 }
-.card-middle {
+.cardMiddle11 {
   display: flex;
   align-items: center;
 }
-.description {
+.description11 {
   font-size: 22px;
 }
-.job-description {
+.jobDescription11 {
   font-size: 16px;
   font-weight: none;
   font-family: 'Roboto';
   margin-top: 12px;
 }
-.visit-main-box {
+.visitMainBox {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.anchor-element {
+.anchorEl {
   color: #6366f1;
   font-size: 16px;
   display: flex;
   align-items: center;
   text-decoration: none;
 }
-.visit-icon {
+.visitIcon {
   color: #6366f1;
   height: 20px;
   width: 20px;
@@ -115,45 +115,45 @@
   margin: 0px;
   flex-wrap: wrap;
 }
-.each-skill {
+.eachSkill {
   display: flex;
   height: 100px;
   width: 120px;
   list-style-type: none;
   align-items: center;
 }
-.skill-content {
+.skillContent {
   width: 60%;
   display: flex;
   align-items: center;
 }
 
-.skill-img {
+.skillImg {
   width: 38px;
   height: 45px;
   margin-right: 8px;
 }
-.skill-head {
+.skillHead {
   font-size: 15px;
 }
-.life-at-company {
+.lifeAtCompany {
   width: 100%;
 }
-.life-at-company-content {
+.lifeAtCompanyContent {
   width: 100%;
   font-size: 16px;
   color: #f1f5f9;
 }
-.life-atC-company-img {
+.lifeAtCompanyImg {
   width: 100%;
   border-radius: 15px;
 }
 
-.similar-jobs-head {
+.similarJobsHead {
   font-size: 25px;
   color: #ffffff;
 }
-.similar-job-card {
+.similarJobCard {
   background-color: #272727;
   border-radius: 20px;
   display: flex;
@@ -166,7 +166,7 @@
   list-style-type: none;
   margin-right: 20px;
 }
-.similar-job-container {
+.similarJobContainer {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -183,21 +183,21 @@
   font-size: 18px;
   margin-bottom: 0px;
 }
-.rating-number {
+.ratingNumber {
   font-size: 18px;
   color: #ffffff;
 }
-.cardTop {
+.cardTop22 {
   display: flex;
   align-items: center;
 }
-.similar-para {
+.similarPara {
   font-size: 15px;
   color: #ffffff;
 }
 
 @media screen and (min-width: 768px) {
-  .Job-details-bg {
+  .jobDetailsBg {
     background-color: #121212;
     min-height: 100vh;
     display: flex;
@@ -209,7 +209,7 @@
     padding-right: 35px;
   }
 
-  .card-container {
+  .cardContainer11 {
     background-color: #272727;
     border-radius: 20px;
     display: flex;
@@ -219,10 +219,10 @@
     font-family: 'Roboto';
     margin: 10px;
   }
-  .card-top {
+  .cardTop11 {
     display: flex;
   }
-  .company-logo {
+  .companyLogo11 {
     height: 100px;
     width: 100px;
     margin-right: 10px;
@@ -235,7 +235,7 @@
     display: flex;
     align-items: center;
   }
-  .star-size {
+  .starSize11 {
     height: 27px;
     width: 27px;
     color: #fbbf24;
@@ -243,7 +243,7 @@
     border-style: none;
     margin-right: 5px;
   }
-  .card-middle {
+  .cardMiddle11 {
     display: flex;
     margin-top: 15px;
     align-items: center;
@@ -259,32 +259,32 @@
     font-size: 18px;
     margin-right: 15px;
   }
-  .card-middle {
+  .cardMiddle11 {
     display: flex;
     align-items: center;
   }
-  .description {
+  .description11 {
     font-size: 27px;
   }
-  .job-description {
+  .jobDescription11 {
     font-size: 22px;
     font-weight: none;
     font-family: 'Roboto';
     margin-top: 12px;
   }
-  .visit-main-box {
+  .visitMainBox {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-  .anchor-element {
+  .anchorEl {
     color: #6366f1;
     font-size: 20px;
     display: flex;
     align-items: center;
     text-decoration: none;
   }
-  .visit-icon {
+  .visitIcon {
     color: #6366f1;
     height: 30px;
     width: 30px;
@@ -298,46 +298,46 @@
     margin: 0px;
     flex-wrap: wrap;
   }
-  .each-skill {
+  .eachSkill {
     display: flex;
     height: 150px;
     width: 320px;
     list-style-type: none;
     align-items: center;
   }
-  .skill-content {
+  .skillContent {
     width: 60%;
     display: flex;
     align-items: center;
   }
 
-  .skill-image {
+  .skillImg {
     width: 50px;
     height: 60px;
     margin-right: 10px;
   }
-  .skill-head {
+  .skillHead {
     font-size: 20px;
   }
-  .life-at-company {
+  .lifeAtCompany {
     display: flex;
   }
-  .life-at-company-content {
+  .lifeAtCompanyContent {
     width: 60%;
     margin-right: 30px;
     font-size: 25px;
     color: #f1f5f9;
   }
-  .life-at-company-img {
+  .lifeAtCompanyImg {
     width: 36%;
     border-radius: 15px;
   }
 
-  .similar-jobs-head {
+  .similarJobsHead {
     font-size: 33px;
     color: #ffffff;
   }
-  .similar-jobs-card {
+  .similarJobCard {
     background-color: #272727;
     border-radius: 20px;
     display: flex;
@@ -350,31 +350,31 @@
     list-style-type: none;
     margin-right: 20px;
   }
-  .similar-jobs-container {
+  .similarJobContainer {
     display: flex;
     flex-wrap: wrap;
     padding: 0px;
     margin: 0px;
   }
 
-  .company-logo {
+  .companyLogo22 {
     height: 70px;
     width: 70px;
     margin-right: 10px;
   }
-  .role {
+  .role22 {
     font-size: 18px;
     margin-bottom: 0px;
   }
-  .rating-number {
+  .ratingNumber {
     font-size: 25px;
     color: #ffffff;
   }
-  .card-top {
+  .cardTop22 {
     display: flex;
     align-items: center;
   }
-  .similar-para {
+  .similarPara {
     font-size: 18px;
     color: #ffffff;
   }

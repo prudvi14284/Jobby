@@ -1,4 +1,4 @@
-.card-container1 {
+.cardContainer1 {
   background-color: #272727;
   border-radius: 15px;
   display: flex;
@@ -8,10 +8,10 @@
   font-family: 'Roboto';
   margin: 10px;
 }
-.card-top {
+.cardTop {
   display: flex;
 }
-.company-logo {
+.companyLogo {
   height: 60px;
   width: 60px;
   margin-right: 10px;
@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
 }
-.star-size {
+.starSize {
   height: 23px;
   width: 23px;
   color: #fbbf24;
@@ -33,7 +33,7 @@
   margin-right: 5px;
   margin-top: 5px;
 }
-.card-middle {
+.cardMiddle {
   display: flex;
   margin-top: 15px;
   align-items: center;
@@ -49,14 +49,14 @@
   font-size: 13px;
   margin-right: 15px;
 }
-.card-middle1 {
+.cardMiddle1 {
   display: flex;
   align-items: center;
 }
 .description {
   font-size: 17px;
 }
-.job-description {
+.jobDescription {
   font-size: 13px;
   font-weight: none;
   font-family: 'Roboto';
@@ -64,7 +64,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .card-container {
+  .cardContainer1 {
     background-color: #272727;
     border-radius: 15px;
     display: flex;
@@ -74,10 +74,10 @@
     font-family: 'Roboto';
     margin: 10px;
   }
-  .card-top {
+  .cardTop {
     display: flex;
   }
-  .company-logo {
+  .companyLogo {
     height: 70px;
     width: 70px;
     margin-right: 10px;
@@ -90,7 +90,7 @@
     display: flex;
     align-items: center;
   }
-  .star-size {
+  .starSize {
     height: 27px;
     width: 27px;
     color: #fbbf24;
@@ -98,7 +98,7 @@
     border-style: none;
     margin-right: 5px;
   }
-  .card-middle {
+  .cardMiddle {
     display: flex;
     margin-top: 15px;
     align-items: center;
@@ -114,14 +114,14 @@
     font-size: 15px;
     margin-right: 15px;
   }
-  .card-middle1 {
+  .cardMiddle1 {
     display: flex;
     align-items: center;
   }
   .description {
     font-size: 18px;
   }
-  .job-description {
+  .jobDescription {
     font-size: 16px;
     font-weight: none;
     font-family: 'Roboto';

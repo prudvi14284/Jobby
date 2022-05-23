@@ -177,10 +177,10 @@ class Jobs extends Component {
   renderJobs = () => {
     const {jobsList} = this.state
     return (
-      <ul className="jobs-bg">
+      <ul className="allJobsBg">
         {jobsList.map(each => (
           <Link to={`/jobs/${each.id}`} className="eachJob">
-            <li className="each-Job">
+            <li className="eachJob">
               <JobCard items={each} key={each.id} />
             </li>
           </Link>
@@ -190,31 +190,31 @@ class Jobs extends Component {
   }
 
   renderNoJobs = () => (
-    <div className="no-Jobs-Container">
+    <div className="noJobsContainer">
       <img
         src="https://assets.ccbp.in/frontend/react-js/no-jobs-img.png"
-        className="no-Jobs-img"
+        className="noJobsImg"
         alt="no jobs"
       />
-      <h1 className="no-jobs-head">No Jobs Found</h1>
-      <p className="no-jobs-para">
+      <h1 className="noJobsHead">No Jobs Found</h1>
+      <p className="noJobsPara">
         We could not find any jobs. Try other filters
       </p>
     </div>
   )
 
   renderErrorJobs = () => (
-    <div className="no-Jobs-Container">
+    <div className="noJobsContainer">
       <img
         src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
-        className="no-Jobs-img"
+        className="noJobsImg"
         alt="failure view"
       />
-      <h1 className="no-jobs-head">Oops! Something Went Wrong</h1>
-      <p className="no-jobs-para">
+      <h1 className="noJobsHead">Oops! Something Went Wrong</h1>
+      <p className="noJobsPara">
         We cannot seem to find the page you are looking for.
       </p>
-      <button className="logout-button" type="button" onClick={this.callJobs}>
+      <button className="logoutButton" type="button" onClick={this.callJobs}>
         Retry
       </button>
     </div>
@@ -231,7 +231,7 @@ class Jobs extends Component {
   }
 
   renderLoading = () => (
-    <div className="no-Jobs-Container">
+    <div className="noJobsContainer">
       <div className="loader-container" testid="loader">
         <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
       </div>
@@ -239,15 +239,7 @@ class Jobs extends Component {
   )
 
   render() {
-    const {
-      employmentType1,
-      employmentType2,
-      employmentType3,
-      employmentType4,
-      searchInput,
-      jobsList,
-      isLoading,
-    } = this.state
+    const {searchInput, isLoading} = this.state
 
     return (
       <>
@@ -256,10 +248,10 @@ class Jobs extends Component {
           <div className="sideBar">
             <Profile />
             <hr className="line" />
-            <h1 className="employment-type">Type of Employment</h1>
-            <ul className="employment-url">
+            <h1 className="employmentType">Type of Employment</h1>
+            <ul className="employmentUl">
               {employmentTypesList.map(each => (
-                <li className="employment-values" key={each.employmentTypeId}>
+                <li className="employmentValues" key={each.employmentTypeId}>
                   <input
                     type="checkbox"
                     id={each.employmentTypeId}
@@ -272,14 +264,14 @@ class Jobs extends Component {
               ))}
             </ul>
             <hr className="line" />
-            <h1 className="employment-type">Salary Range</h1>
-            <ul className="employment-url">
+            <h1 className="employmentType">Salary Range</h1>
+            <ul className="employmentUl">
               {salaryRangesList.map(each => (
-                <li className="employment-values" key={each.salaryRangeId}>
+                <li className="employmentValues" key={each.salaryRangeId}>
                   <input
                     type="radio"
                     id={each.salaryRangeId}
-                    className="check-class"
+                    className="checkClass"
                     name="salary"
                     value={each.salaryRangeId}
                     onChange={this.salaryRangeFun}
@@ -289,22 +281,22 @@ class Jobs extends Component {
               ))}
             </ul>
           </div>
-          <div className="jobs-container">
-            <div className="search-container">
+          <div className="jobsContainer">
+            <div className="searchContainer">
               <input
                 type="search"
-                className="input-search"
+                className="inputSearch"
                 placeholder="Search"
                 value={searchInput}
                 onChange={this.searching}
               />
               <button
                 type="button"
-                testid="search-button"
+                testid="searchButton"
                 onClick={this.searchClick}
-                className="search-button"
+                className="searchButton"
               >
-                <BsSearch className="search-style" />
+                <BsSearch className="searchStyle" />
               </button>
             </div>
             {isLoading ? this.renderLoading() : this.renderJobsCheck()}

@@ -7,6 +7,7 @@ import './index.css'
 const JobCard = props => {
   const {items} = props
   const {
+    id,
     companyLogoUrl,
     employmentType,
     jobDescription,
@@ -16,24 +17,24 @@ const JobCard = props => {
     title,
   } = items
   return (
-    <div className="card-container">
-      <div className="card-top">
+    <div className="cardContainer1">
+      <div className="cardTop">
         <img
           src={companyLogoUrl}
-          className="company-logo"
+          className="companyLogo"
           alt="company logo"
           key={companyLogoUrl}
         />
         <div>
           <h1 className="role">{title}</h1>
           <div className="rating">
-            <AiOutlineStar className="star-size" />
+            <AiOutlineStar className="starSize" />
             <p className="role">{rating}</p>
           </div>
         </div>
       </div>
-      <div className="card-middle">
-        <div className="card-middle1">
+      <div className="cardMiddle">
+        <div className="cardMiddle1">
           <IoLocationSharp className="location" />
           <p className="location1">{location}</p>
           <BsFillBagFill className="location" />
@@ -44,7 +45,7 @@ const JobCard = props => {
       <hr className="line" />
       <h1 className="description">Description</h1>
 
-      <p className="job-description">{jobDescription}</p>
+      <p className="jobDescription">{jobDescription}</p>
     </div>
   )
 }

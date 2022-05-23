@@ -1,6 +1,6 @@
 import {Component} from 'react'
-import Cookies from 'js-cookie'
 import {Redirect} from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 import './index.css'
 
@@ -8,124 +8,114 @@ class Login extends Component {
   state = {
     username: '',
     password: '',
-    showSubmitError: false,
     errorMsg: '',
+    usernameError: '',
+    passwordError: '',
   }
 
-  onChangeUserName = event => {
-    this.setState({username: event.target.value})
-  }
-
-  onChangePassword = event => {
-    this.setState({password: event.target.value})
-  }
-
-  onSubmitSuccess = jwtToken => {
+  successLogin = jwtToken => {
+    Cookies.set('jwt_token', jwtToken, {expires: 30})
     const {history} = this.props
-
-    Cookies.set('jwt_token', jwtToken, {
-      expires: 30,
-    })
     history.replace('/')
   }
 
-  onSubmitFailure = errorMsg => {
-    this.setState({showSubmitError: true, errorMsg})
+  failureLogin = errorMsg1 => {
+    this.setState({errorMsg: errorMsg1})
   }
 
-  submitForm = async event => {
-    event.preventDefault()
-    const {username, password} = this.state
-    const userDetails = {username, password}
-    const url = 'https://apis.ccbp.in/login'
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(userDetails),
+  usernameBlurFun = () => {
+    const {username} = this.state
+    if (username === '') {
+      this.setState({usernameError: '* Required'})
+    } else {
+      this.setState({usernameError: ''})
     }
+  }
+
+  passwordBlurFun = () => {
+    const {password} = this.state
+    if (password === '') {
+      this.setState({passwordError: '* Required'})
+    } else {
+      this.setState({passwordError: ''})
+    }
+  }
+
+  onChangeUserName = event => this.setState({username: event.target.value})
+
+  onChangePassword = event => this.setState({password: event.target.value})
+
+  submitFun = async event => {
+    event.preventDefault()
+
+    const {username, password} = this.state
+    const userData = {username, password}
+    const url = 'https://apis.ccbp.in/login'
+    const options = {method: 'POST', body: JSON.stringify(userData)}
     const response = await fetch(url, options)
     const data = await response.json()
-
+    console.log(data)
     if (response.ok === true) {
-      this.onSubmitSuccess(data.jwt_token)
+      this.successLogin(data.jwt_token)
     } else {
-      this.onSubmitFailure(data.error_msg)
+      console.log(data.error_msg)
+      this.failureLogin(data.error_msg)
     }
-  }
-
-  renderPasswordField = () => {
-    const {password} = this.state
-
-    return (
-      <>
-        <label className="input-label" htmlFor="password">
-          PASSWORD
-        </label>
-        <input
-          type="text"
-          id="password"
-          className="user-name-input-field"
-          value={password}
-          onChange={this.onChangePassword}
-          placeHolder="password"
-        />
-      </>
-    )
-  }
-
-  renderUsernameField = () => {
-    const {username} = this.state
-
-    return (
-      <>
-        <label className="input-label" htmlFor="userName">
-          USERNAME
-        </label>
-        <input
-          type="text"
-          id="userName"
-          className="user-name-input-field"
-          value={username}
-          onChange={this.onChangeUserName}
-          placeHolder="username"
-        />
-      </>
-    )
   }
 
   render() {
-    const {showSubmitError, errorMsg} = this.state
     const jwtToken = Cookies.get('jwt_token')
-
     if (jwtToken !== undefined) {
       return <Redirect to="/" />
     }
+    const {
+      userName,
+      password,
+      errorMsg,
+      passwordError,
+      usernameError,
+    } = this.state
     return (
-      <div className="login-form-container">
-        <div className="login-form-sub-container">
-          <div className="login-container">
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-              className="logo-img"
-              alt="website logo"
+      <div className="loginBg">
+        <form className="formContainer" onSubmit={this.submitFun}>
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
+            alt="website logo"
+            className="appLogo"
+          />
+          <div className="inputForms">
+            <label className="inputs" htmlFor="userName">
+              USERNAME
+            </label>
+            <input
+              id="userName"
+              value={userName}
+              type="text"
+              placeholder="Username"
+              className="inputElement"
+              onChange={this.onChangeUserName}
+              onBlur={this.usernameBlurFun}
             />
-            <div className="forms-container">
-              <form className="form-container" onSubmit={this.submitForm}>
-                <div className="input-container">
-                  {this.renderUsernameField()}
-                </div>
-                <div className="input-container">
-                  {this.renderPasswordField()}
-                </div>
-                <button type="button" className="login-button">
-                  Login
-                </button>
-                {showSubmitError && (
-                  <p className="error-message">*{errorMsg}</p>
-                )}
-              </form>
-            </div>
+            <p className="errMsg">{usernameError}</p>
+            <label className="inputs" htmlFor="password">
+              PASSWORD
+            </label>
+            <input
+              id="password"
+              value={password}
+              type="password"
+              placeholder="Password"
+              className="inputElement"
+              onChange={this.onChangePassword}
+              onBlur={this.passwordBlurFun}
+            />
+            <p className="errMsg">{passwordError}</p>
+            <button type="submit" className="button">
+              Login
+            </button>
+            {errorMsg === '' ? null : <p className="errMsg">* {errorMsg}</p>}
           </div>
-        </div>
+        </form>
       </div>
     )
   }

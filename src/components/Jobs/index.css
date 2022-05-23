@@ -1,4 +1,4 @@
-.jobs-bg {
+.jobsBg {
   background-color: #121212;
   min-height: 100vh;
   display: flex;
@@ -9,11 +9,11 @@
   padding-top: 20px;
   max-width: 100%;
 }
-.side-bar {
+.sideBar {
   width: 85%;
   margin-top: 10px;
 }
-.jobs-container {
+.jobsContainer {
   width: 90%;
   margin: 20px;
 }
@@ -22,25 +22,25 @@
   margin-top: 20px;
   width: 100%;
 }
-.employment-type {
+.employmentType {
   color: #ffffff;
   font-size: 22px;
 }
-.employment-values {
+.employmentValues {
   color: #ffffff;
   font-size: 18px;
   list-style-type: none;
   padding-top: 10px;
 }
-.employment-url {
+.employmentUl {
   margin: 0px;
   padding: 0px;
 }
-.check-class {
+.checkClass {
   margin-right: 10px;
 }
 
-.search-container {
+.searchContainer {
   display: flex;
   align-items: center;
   border-color: #cbd5e1;
@@ -52,7 +52,7 @@
   margin-left: 10px;
 }
 
-.input-search {
+.inputSearch {
   background-color: transparent;
   outline: none;
   border: none;
@@ -61,11 +61,11 @@
   font-size: 15px;
   width: 92%;
 }
-.search-style {
+.searchStyle {
   height: 30px;
   width: 30px;
 }
-.search-button {
+.searchButton {
   background-color: #272727;
   padding: 5px;
   border-top-right-radius: 8px;
@@ -74,7 +74,7 @@
   outline: none;
   cursor: pointer;
 }
-.all-jobs-bg {
+.allJobsBg {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
@@ -84,21 +84,21 @@
   list-style-type: none;
   text-decoration: none;
 }
-.no-jobs-img {
+.noJobsImg {
   margin-top: 20px;
   width: 70%;
 }
-.no-jobs-head {
+.noJobsHead {
   font-size: 45px;
   color: #ffffff;
   margin-bottom: 0px;
 }
-.no-jobs-para {
+.nojJobsPara {
   font-size: 15px;
   color: #ffffff;
   margin-top: 10px;
 }
-.no-jobs-container {
+.noJobsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,7 +126,7 @@
     width: 25%;
     margin: 20px;
   }
-  .jobsC-container {
+  .jobsContainer {
     width: 73%;
     margin: 20px;
   }
@@ -135,25 +135,25 @@
     margin-top: 20px;
     width: 100%;
   }
-  .employment-type {
+  .employmentType {
     color: #ffffff;
     font-size: 22px;
   }
-  .employment-values {
+  .employmentValues {
     color: #ffffff;
     font-size: 18px;
     list-style-type: none;
     padding-top: 10px;
   }
-  .employment-url {
+  .employmentUl {
     margin: 0px;
     padding: 0px;
   }
-  .check-class {
+  .checkClass {
     margin-right: 10px;
   }
 
-  .search-container {
+  .searchContainer {
     display: flex;
     align-items: center;
     border-color: #cbd5e1;
@@ -165,7 +165,7 @@
     margin-left: 10px;
   }
 
-  .input-search {
+  .inputSearch {
     background-color: transparent;
     outline: none;
     border: none;
@@ -174,11 +174,11 @@
     font-size: 15px;
     width: 92%;
   }
-  .search-style {
+  .searchStyle {
     height: 30px;
     width: 30px;
   }
-  .search-button {
+  .searchButton {
     background-color: #272727;
     padding: 5px;
     border-top-right-radius: 8px;
@@ -187,31 +187,31 @@
     outline: none;
     cursor: pointer;
   }
-  .all-jobs-bg {
+  .allJobsBg {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
     padding: 0px;
   }
-  .each-job {
+  .eachJob {
     list-style-type: none;
     text-decoration: none;
   }
-  .no-jobs-img {
+  .noJobsImg {
     margin-top: 20px;
     width: 70%;
   }
-  .no-jobs-head {
+  .noJobsHead {
     font-size: 45px;
     color: #ffffff;
     margin-bottom: 0px;
   }
-  .no-jobs-para {
+  .noJobsPara {
     font-size: 15px;
     color: #ffffff;
     margin-top: 10px;
   }
-  .no-jobs-container {
+  .noJobsContainer {
     display: flex;
     flex-direction: column;
     align-items: center;

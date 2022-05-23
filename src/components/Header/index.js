@@ -3,53 +3,38 @@ import Cookies from 'js-cookie'
 import './index.css'
 
 const Header = props => {
-  const onClickLogout = () => {
-    const {history} = props
+  const {history} = props
+  const logoutClick = () => {
     Cookies.remove('jwt_token')
     history.replace('/login')
   }
 
   return (
-    <nav className="nav-header">
-      <div className="nav-content">
-        <div className="nav-bar-mobile-logo-link">
+    <nav>
+      <ul className="homeNav">
+        <li className="eachItem">
           <Link to="/">
             <img
-              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-              className="website-logo"
+              className="headLogo"
               alt="website logo"
+              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
             />
           </Link>
-        </div>
-        <div className="nav-bar-large-container">
-          <Link to="/">
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/logo-img.png"
-              className="website-logo"
-              alt="website logo"
-            />
+        </li>
+        <li className="eachItem1">
+          <Link to="/" className="headerLi">
+            Home
           </Link>
-          <ul className="nav-menu">
-            <li className="nav-menu-item">
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
-            </li>
-            <li className="nav-menu-item">
-              <Link to="/jobs" className="nav-link">
-                Jobs
-              </Link>
-            </li>
-          </ul>
-          <button
-            type="button"
-            className="logout-desktop-btn"
-            onClick={onClickLogout}
-          >
+          <Link to="/jobs" className="headerLi">
+            Jobs
+          </Link>
+        </li>
+        <li className="eachItem">
+          <button className="logoutButton" type="button" onClick={logoutClick}>
             Logout
           </button>
-        </div>
-      </div>
+        </li>
+      </ul>
     </nav>
   )
 }

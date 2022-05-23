@@ -4,11 +4,7 @@ import Loader from 'react-loader-spinner'
 import './index.css'
 
 class Profile extends Component {
-  state = {
-    profileData: {},
-    isError: false,
-    isLoading: false,
-  }
+  state = {profileData: {}, isError: false, isLoading: false}
 
   componentDidMount() {
     this.profileCall()
@@ -24,7 +20,6 @@ class Profile extends Component {
     }
 
     const response = await fetch(url, options)
-
     if (response.ok === true) {
       const data = await response.json()
       const profileDetails = data.profile_details
@@ -40,35 +35,31 @@ class Profile extends Component {
     }
   }
 
-  onLoading = () => (
-    <div className="error-profile" testid="loader">
-      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
+  onProfileError = () => (
+    <div className="errorProfile">
+      <button className="logoutButton" type="button" onClick={this.profileCall}>
+        Retry
+      </button>
     </div>
   )
 
-  onProfileError = () => (
-    <div className="error-profile">
-      <button
-        className="logout-button"
-        type="button"
-        onClick={this.profileCall}
-      >
-        Retry
-      </button>
+  onLoading = () => (
+    <div className="errorProfile" testid="loader">
+      <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
 
   onProfileSuccess = () => {
     const {profileData} = this.state
     return (
-      <div className="profile-card">
+      <div className="profileCard">
         <img
           src={profileData.profileImageUrl}
-          className="profile-pic"
+          className="profilePic"
           alt="profile"
         />
-        <h1 className="profile-name">{profileData.name}</h1>
-        <p className="profile-role">{profileData.shortBio}</p>
+        <h1 className="ProfileName">{profileData.name}</h1>
+        <p className="ProfileRole">{profileData.shortBio}</p>
       </div>
     )
   }

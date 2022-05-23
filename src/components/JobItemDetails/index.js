@@ -1,5 +1,5 @@
 import {AiOutlineStar} from 'react-icons/ai'
-import Component from 'react'
+import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {IoLocationSharp, IoEnterOutline} from 'react-icons/io5'
 import Loader from 'react-loader-spinner'
@@ -11,7 +11,7 @@ class JobItemDetails extends Component {
   state = {
     jobDetails: {},
     similarJobs: [],
-    skills: [],
+    skills1: [],
     isLoading: false,
     isError: false,
   }
@@ -70,7 +70,7 @@ class JobItemDetails extends Component {
       this.setState({
         jobDetails: newJobDetails,
         similarJobs: newSimilarJobs,
-        skills: newJobDetails.skills,
+        skills1: newJobDetails.skills,
         isLoading: false,
       })
     } else {
@@ -78,25 +78,25 @@ class JobItemDetails extends Component {
     }
   }
 
-  loading = () => (
-    <div className="loading-bg" testid="loader">
+  loadingFun = () => (
+    <div className="loadingBg" testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height="50" width="50" />
     </div>
   )
 
-  errorLoading = () => (
-    <div className="job-details-bg">
+  errorFun = () => (
+    <div className="jobDetailsBg">
       <img
         src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
-        className="no-jobs-img"
+        className="noJobsImg"
         alt="failure view"
       />
-      <h1 className="no-jobs-head">Oops! something went wrong</h1>
-      <p className="no-jobs-description">
+      <h1 className="noJobsHead">Oops! Something Went Wrong</h1>
+      <p className="noJobsPara">
         We cannot seem to find the page you are looking for.
       </p>
       <button
-        className="logout-button"
+        className="logoutButton"
         type="button"
         onClick={this.jobDetailsCall}
       >
@@ -106,93 +106,99 @@ class JobItemDetails extends Component {
   )
 
   onSuccess = () => {
-    const {jobDetails, similarJobs, skills} = this.state
-
+    const {jobDetails, similarJobs, skills1} = this.state
     return (
-      <div className="job-details-bg">
-        <div className="card-container">
-          <div className="card-top">
+      <div className="jobDetailsBg">
+        <div className="cardContainer11">
+          <div className="cardTop11">
             <img
               src={jobDetails.companyLogoUrl}
-              className="company-logo"
+              className="companyLogo11"
               alt="job details company logo"
             />
+            <div>
+              <h1 className="role11">{jobDetails.title}</h1>
+              <div className="rating11">
+                <AiOutlineStar className="starSize11" />
+                <p className="role11">{jobDetails.rating}</p>
+              </div>
+            </div>
           </div>
-          <div className="card-middle">
-            <div className="card-middle">
+          <div className="cardMiddle11">
+            <div className="cardMiddle11">
               <IoLocationSharp className="location" />
               <p className="location11">{jobDetails.location}</p>
               <BsFillBagFill className="location" />
-              <p className="location">{jobDetails.employmentType}</p>
+              <p className="location11">{jobDetails.employmentType}</p>
             </div>
             <p className="role12">{jobDetails.packagePerAnnum}</p>
           </div>
           <hr className="line" />
-          <div className="visit-main-box">
-            <h1 className="description">Description</h1>
-            <div className="visit-box">
-              <a className="anchor-element" href={jobDetails.companyWebsiteUrl}>
-                Visit <IoEnterOutline className="visit-icon" />
+          <div className="visitMainBox">
+            <h1 className="description11">Description</h1>
+            <div className="visitBox">
+              <a className="anchorEl" href={jobDetails.companyWebsiteUrl}>
+                Visit <IoEnterOutline className="visitIcon" />
               </a>
             </div>
           </div>
-          <p className="job-description">{jobDetails.jobDescription}</p>
-          <h1 className="description">Skills</h1>
+          <p className="jobDescription11">{jobDetails.jobDescription}</p>
+          <h1 className="description11">Skills</h1>
           <ul className="skills">
-            {skills.map(each => (
+            {skills1.map(each => (
               <>
-                <li className="each-skill">
+                <li className="eachSkill">
                   <img
                     src={each.imageUrl}
-                    className="skill-img"
+                    className="skillImg"
                     alt={each.name}
                   />
-                  <h1 className="skill-head">{each.name}</h1>
+                  <h1 className="skillHead">{each.name}</h1>
                 </li>
               </>
             ))}
           </ul>
-          <h1 className="description">Life at Company</h1>
-          <div className="life-at-company">
-            <div className="life-at-company-content">
+          <h1 className="description11">Life at Company</h1>
+          <div className="lifeAtCompany">
+            <div className="lifeAtCompanyContent">
               <p>{jobDetails.lifeAtCompanyDescription}</p>
             </div>
             <img
               src={jobDetails.lifeAtCompanyImageUrl}
-              className="life-at-company-content"
+              className="lifeAtCompanyImg"
               alt="life at company"
             />
           </div>
         </div>
-        <h1 className="similar-jobs-head">Similar Jobs</h1>
-        <ul className="similar-jobs-container">
+        <h1 className="similarJobsHead">Similar Jobs</h1>
+        <ul className="similarJobContainer">
           {similarJobs.map(each => (
             <>
-              <li className="similar-jobs-card" key={each.id}>
-                <div className="card-top-2">
+              <li className="similarJobCard" key={each.id}>
+                <div className="cardTop22">
                   <img
                     src={each.companyLogoUrl}
-                    className="company-logo2"
+                    className="companyLogo22"
                     alt="similar job company logo"
                   />
                   <div>
-                    <h1 className="role1">{each.title}</h1>
-                    <div className="rating1">
-                      <AiOutlineStar className="star-size" />
-                      <p className="rating-number">{each.rating}</p>
+                    <h1 className="role22">{each.title}</h1>
+                    <div className="rating11">
+                      <AiOutlineStar className="starSize11" />
+                      <p className="ratingNumber">{each.rating}</p>
                     </div>
                   </div>
                 </div>
                 <h1 className="role22">Description</h1>
-                <p className="similar-para">{each.jobDescription}</p>
-                <div className="card-middle">
-                  <div className="card-top">
+                <p className="similarPara">{each.jobDescription}</p>
+                <div className="cardMiddle11">
+                  <div className="cardTop22">
                     <IoLocationSharp className="location" />
-                    <p className="location1">{each.location}</p>
+                    <p className="location11">{each.location}</p>
                   </div>
-                  <div className="card-top">
+                  <div className="cardTop22">
                     <BsFillBagFill className="location" />
-                    <p className="location1">{each.employmentType}</p>
+                    <p className="location11">{each.employmentType}</p>
                   </div>
                 </div>
               </li>
@@ -205,7 +211,7 @@ class JobItemDetails extends Component {
 
   afterLoading = () => {
     const {isError} = this.state
-    return isError ? this.errorLoading() : this.onSuccess()
+    return isError ? this.errorFun() : this.onSuccess()
   }
 
   render() {
@@ -213,7 +219,7 @@ class JobItemDetails extends Component {
     return (
       <>
         <Header />
-        {isLoading ? this.loading() : this.afterLoading()}
+        {isLoading ? this.loadingFun() : this.afterLoading()}
       </>
     )
   }
