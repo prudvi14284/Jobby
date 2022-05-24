@@ -179,9 +179,9 @@ class Jobs extends Component {
     return (
       <ul className="allJobsBg">
         {jobsList.map(each => (
-          <Link to={`/jobs/${each.id}`} className="eachJob">
+          <Link to={`/jobs/${each.id}`} className="eachJob" key={each.id}>
             <li className="eachJob">
-              <JobCard items={each} key={each.id} />
+              <JobCard items={each} />
             </li>
           </Link>
         ))}
