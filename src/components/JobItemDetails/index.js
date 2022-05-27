@@ -147,7 +147,7 @@ class JobItemDetails extends Component {
           <ul className="skills">
             {skills1.map(each => (
               <>
-                <li className="eachSkill">
+                <li className="eachSkill" key={each.id}>
                   <img
                     src={each.imageUrl}
                     className="skillImg"
